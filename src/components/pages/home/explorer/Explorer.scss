@@ -1,0 +1,29 @@
+.pl-table {
+    .row{ 
+      align-items: center; 
+    }
+    .col{ 
+      overflow: hidden; 
+      text-overflow: ellipsis;
+    }
+    .pl-thead {
+      font-weight: bold;
+      border-bottom-width: 3px !important;
+      &.tall {
+        .col {
+          align-self: stretch;
+        }
+      }
+    }
+    .pl-tbody {
+      .row {
+        &:hover{
+            background-color: lightgray;
+        }
+      }
+      &.scroll {
+        max-height: calc(100vh - 200px);
+        overflow-x: scroll;
+      }
+    }
+}

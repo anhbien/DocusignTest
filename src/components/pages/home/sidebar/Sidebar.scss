@@ -1,7 +1,29 @@
-.sidebar-sticky{
-    top: 0;
-    height: calc(100vh - 137px);
-    padding-top: .5rem;
-    overflow-x: hidden;
-    overflow-y: auto;
+.sidebar{
+    transition: flex-shrink 0.8s ease;
+    flex-shrink: 6 !important;
+    &.collapsed{
+        flex-shrink: 26 !important;
+        text-align: center ;
+        .btn-collapse{
+            .fas{
+                transform: rotate(180deg);
+            }
+        }
+    }
+    .sidebar-sticky{
+        top: 0;
+        height: calc(100vh - 48px);
+        padding-top: .5rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+        .btn-collapse{
+            cursor: pointer;
+            .fas{
+                transition: transform 0.8s ease;
+            }
+        }
+        button{
+            min-width: 42px;
+        }
+    }
 }
