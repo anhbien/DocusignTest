@@ -28,13 +28,13 @@ export default class Sidebar extends Component {
         )
         return (
             <nav className={"d-none d-md-block bg-light sidebar border-right " + (this.state.collapsed?"collapsed":"")}>
-                <div className="sidebar-sticky">
-                    <div className="text-right pr-1">
-                        <span className="btn-collapse" onClick={this.toggle} title="Toggle">
-                            <span className="fas fa-chevron-circle-left"></span>
+                <div className="sidebar-sticky d-flex align-items-start flex-column">
+                    <div className="ml-2">
+                        <span className="text-left btn-collapse" onClick={this.toggle} title="Toggle">
+                            <span className="fas fa-chevron-circle-right"></span>
                         </span>
                     </div>
-                    <div className="text-center">{Actions}</div>
+                    <div className="d-flex flex-wrap button-wrapper ml-2 mr-2">{Actions}</div>
                 </div>
             </nav>
             

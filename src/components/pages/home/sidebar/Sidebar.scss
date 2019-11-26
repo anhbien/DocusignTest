@@ -1,8 +1,11 @@
 .sidebar{
-    transition: width 0.8s ease;
-    width: 25%;
+    transition: max-width 0.8s ease;
+    max-width: 165px;
+    .button-wrapper{
+        width: 150px;
+    }
     &.collapsed{
-        width: 5%;
+        max-width: 60px;
         text-align: center ;
         .btn-collapse{
             .fas{
@@ -14,8 +17,7 @@
         top: 0;
         height: calc(100vh - 104px);
         padding-top: .5rem;
-        overflow-x: hidden;
-        overflow-y: auto;
+        overflow: hidden;
         .btn-collapse{
             cursor: pointer;
             .fas{
