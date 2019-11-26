@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/DocusignTest/static/css/main.fd5018df.chunk.css",
+    "main.js": "/DocusignTest/static/js/main.0005d40a.chunk.js",
+    "main.js.map": "/DocusignTest/static/js/main.0005d40a.chunk.js.map",
+    "runtime-main.js": "/DocusignTest/static/js/runtime-main.213ab0e7.js",
+    "runtime-main.js.map": "/DocusignTest/static/js/runtime-main.213ab0e7.js.map",
+    "static/js/2.98036c45.chunk.js": "/DocusignTest/static/js/2.98036c45.chunk.js",
+    "static/js/2.98036c45.chunk.js.map": "/DocusignTest/static/js/2.98036c45.chunk.js.map",
+    "index.html": "/DocusignTest/index.html",
+    "precache-manifest.1fb26cf9d15ac877083f08db1d6a841f.js": "/DocusignTest/precache-manifest.1fb26cf9d15ac877083f08db1d6a841f.js",
+    "service-worker.js": "/DocusignTest/service-worker.js",
+    "static/css/main.fd5018df.chunk.css.map": "/DocusignTest/static/css/main.fd5018df.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.213ab0e7.js",
+    "static/js/2.98036c45.chunk.js",
+    "static/css/main.fd5018df.chunk.css",
+    "static/js/main.0005d40a.chunk.js"
+  ]
+}
