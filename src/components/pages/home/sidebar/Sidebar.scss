@@ -1,8 +1,8 @@
 .sidebar{
-    transition: flex-shrink 0.8s ease;
-    flex-shrink: 6 !important;
+    transition: width 0.8s ease;
+    width: 25%;
     &.collapsed{
-        flex-shrink: 26 !important;
+        width: 5%;
         text-align: center ;
         .btn-collapse{
             .fas{
@@ -12,7 +12,7 @@
     }
     .sidebar-sticky{
         top: 0;
-        height: calc(100vh - 48px);
+        height: calc(100vh - 104px);
         padding-top: .5rem;
         overflow-x: hidden;
         overflow-y: auto;

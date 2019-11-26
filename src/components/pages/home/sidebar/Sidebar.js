@@ -34,7 +34,7 @@ export default class Sidebar extends Component {
                             <span className="fas fa-chevron-circle-left"></span>
                         </span>
                     </div>
-                    <div className="d-flex flex-wrap justify-content-center">{Actions}</div>
+                    <div className="text-center">{Actions}</div>
                 </div>
             </nav>
             
