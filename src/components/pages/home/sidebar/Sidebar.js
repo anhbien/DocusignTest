@@ -7,6 +7,7 @@ export default class Sidebar extends Component {
         collapsed: true
     }
 
+    //Toggle sidebar
     toggle = () =>{
         const currentState= this.state.collapsed;
         this.setState({
@@ -15,6 +16,7 @@ export default class Sidebar extends Component {
     }
 
     render() {
+        //Render all action options
         const Actions =(
             <MyContext.Consumer>
                 {(context)=>(
@@ -27,13 +29,14 @@ export default class Sidebar extends Component {
             </MyContext.Consumer>
         )
         return (
-            <nav className={"d-none d-md-block bg-light sidebar border-right " + (this.state.collapsed?"collapsed":"")}>
+            <nav className={"bg-light sidebar border " + (this.state.collapsed?"collapsed":"")}>
                 <div className="sidebar-sticky d-flex align-items-start flex-column">
-                    <div className="ml-2">
+                    <div className="ml-2 d-none d-sm-block">
                         <span className="text-left btn-collapse" onClick={this.toggle} title="Toggle">
                             <span className="fas fa-chevron-circle-right"></span>
                         </span>
                     </div>
+                    {/* Append actions buttons */}
                     <div className="d-flex flex-wrap button-wrapper ml-2 mr-2">{Actions}</div>
                 </div>
             </nav>

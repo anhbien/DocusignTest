@@ -5,6 +5,9 @@
     .col{ 
         overflow: hidden; 
         text-overflow: ellipsis;
+        &.name{
+            flex-grow: 2;
+        }
     }
     .pl-thead {
         font-weight: bold;
@@ -25,6 +28,16 @@
         &.scroll {
             max-height: calc(100vh - 200px);
             overflow-x: scroll;
+        }
+    }
+}
+// Table behavior for small devices
+@media (max-width: 576px) {
+    .pl-table{
+        .pl-tbody{
+            &.scroll{
+                max-height: calc(100vh - 350px);
+            }
         }
     }
 }

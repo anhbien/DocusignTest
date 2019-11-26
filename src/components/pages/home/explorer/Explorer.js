@@ -5,13 +5,20 @@ import ExplorerRow from './ExplorerRow/ExplorerRow'
 
 export default class Explorer extends Component {
     state={
-        folderExpand: false
+        folderExpand: false,
+        expandeFolderName: ""
     }
-    handleRowClick = (type) =>{
-        if(type==="folder"){
+
+    //Handle row click event by getting info from ExplorerRow child
+    //and only expand folder with the right name
+    handleRowClick = (name, type) =>{
+        //Expand folder by name
+        //TODO: expand folder by ID if possible
+        if(type && type.toLowerCase()==="folder"){
             const currentState = this.state.folderExpand
             this.setState({
-                folderExpand : !currentState
+                folderExpand : !currentState,
+                expandeFolderName: name && name
             })
         }
     }
@@ -22,9 +29,10 @@ export default class Explorer extends Component {
                     {/* Sticky Header */}
                     <div className="pl-thead tall border-bottom border-info">
                         <div className="row p-2">
-                            <div className="col">Name</div>
+                            <div className="col name">Name</div>
                             <div className="col">Description</div>
                             <div className="col">Modified Date</div>
+                            <div className="col">&nbsp;</div>
                         </div>
                     </div>
                     {/* Table Content */}
@@ -32,16 +40,19 @@ export default class Explorer extends Component {
                         <MyContext.Consumer>
                             {(context)=>(
                                 context.GridData.map((value, key)=>(
-                                    <React.Fragment>
-                                        <div className="row p-1 border-bottom" key={key} onClick={()=>this.handleRowClick(value.Type.toLowerCase())}>
-                                            <ExplorerRow value={value}/>
+                                    <React.Fragment key={key}>
+                                        <div className="row p-1 border-bottom">
+                                            <ExplorerRow value={value} onRowClick={this.handleRowClick}/>
                                         </div>
-                                        {
+                                        {                                           
                                             //Render children if available
-                                            (value.Children&&(
+                                            (value.Children && (
                                                 value.Children.map((cValue, cKey)=>(
-                                                <div className={"row p-1 border-bottom " + (this.state.folderExpand?"":"d-none")} key={cKey}>
-                                                    <ExplorerRow value={cValue}/>
+                                                <div className={"subRow row p-1 border-bottom " + 
+                                                                (this.state.folderExpand && this.state.expandeFolderName === value.Name?
+                                                                this.state.expandeFolderName:"d-none")} 
+                                                                key={cKey}>
+                                                    <ExplorerRow value={cValue} onRowClick={this.handleRowClick}/>
                                                 </div>
                                                 )))
                                             )
